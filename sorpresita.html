@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        #imagen {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    
+<img id="imagen" src="img/foto_oso1.jpg" onclick="cambiarImagen()" alt="imagenes" />
+<h1 style="text-align: center;">Presiona la imagen para ver la siguiente</h1>
+
+<script>
+    var imagenes = ["img/foto_oso1.jpg", "img/foto_oso2.jpg", "img/foto_oso3.jpg"];
+    var imagenActual = 0;
+
+    function cambiarImagen() {
+        imagenActual = (imagenActual + 1) % imagenes.length;
+        document.getElementById('imagen').src = imagenes[imagenActual];
+    }
+</script>
+
+</body>
+</html>

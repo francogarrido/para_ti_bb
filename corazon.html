@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Para Ti</title>
+    <style>
+        @keyframes latido {
+            0% { transform: scale(2); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(2); }
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        .corazon-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            animation: latido 1s infinite;
+        }
+        .corazon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(45deg);
+        }
+        .corazon::before,
+        .corazon::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+        }
+        .corazon::before {
+            top: -50px;
+            left: 0;
+        }
+        .corazon::after {
+            top: 0;
+            left: -50px;
+        }
+        .mensaje {
+            position: absolute;
+            top: 20%; /* Ajustar la posición vertical */
+            left: 42%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: white;
+            z-index: 1;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="corazon-container">
+        <div class="corazon"></div>
+        <div class="mensaje">Te quiero mucho <3 </div>
+    </div>
+</body>
+</html>
